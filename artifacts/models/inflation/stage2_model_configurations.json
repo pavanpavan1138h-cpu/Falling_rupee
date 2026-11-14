@@ -1,0 +1,680 @@
+{
+  "C0_1m": {
+    "configuration": "C0",
+    "horizon": 1,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12"
+    ],
+    "initial_train_rows": 83,
+    "tuning_train_rows": 82,
+    "validation_rows": 18,
+    "test_origins": 18,
+    "test_origin_start": "2023-06-01",
+    "test_origin_end": "2024-11-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 0.1,
+        "l1_ratio": 0.9
+      },
+      "random_forest": {
+        "max_depth": 2,
+        "min_samples_leaf": 2,
+        "n_estimators": 200
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "n_estimators": 100,
+        "subsample": 0.8
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C1_1m": {
+    "configuration": "C1",
+    "horizon": 1,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "brent_usd_per_barrel_level_lag_1",
+      "brent_usd_per_barrel_level_lag_2",
+      "brent_usd_per_barrel_level_lag_3",
+      "brent_usd_per_barrel_level_lag_6",
+      "brent_usd_per_barrel_level_lag_12",
+      "brent_mom_pct_change_lag_1",
+      "brent_mom_pct_change_lag_2",
+      "brent_mom_pct_change_lag_3",
+      "brent_mom_pct_change_lag_6",
+      "brent_mom_pct_change_lag_12"
+    ],
+    "initial_train_rows": 83,
+    "tuning_train_rows": 82,
+    "validation_rows": 18,
+    "test_origins": 18,
+    "test_origin_start": "2023-06-01",
+    "test_origin_end": "2024-11-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 1.0,
+        "l1_ratio": 0.1
+      },
+      "random_forest": {
+        "max_depth": 4,
+        "min_samples_leaf": 4,
+        "n_estimators": 200
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "n_estimators": 100,
+        "subsample": 0.8
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C2_1m": {
+    "configuration": "C2",
+    "horizon": 1,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "fx_predicted_level",
+      "fx_predicted_change_pct"
+    ],
+    "initial_train_rows": 83,
+    "tuning_train_rows": 82,
+    "validation_rows": 18,
+    "test_origins": 18,
+    "test_origin_start": "2023-06-01",
+    "test_origin_end": "2024-11-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 0.1,
+        "l1_ratio": 0.9
+      },
+      "random_forest": {
+        "max_depth": 4,
+        "min_samples_leaf": 2,
+        "n_estimators": 200
+      },
+      "xgboost": {
+        "learning_rate": 0.06,
+        "max_depth": 3,
+        "n_estimators": 100,
+        "subsample": 0.8
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C3_1m": {
+    "configuration": "C3",
+    "horizon": 1,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "brent_inr_proxy_level_lag_1",
+      "brent_inr_proxy_level_lag_2",
+      "brent_inr_proxy_level_lag_3",
+      "brent_inr_proxy_level_lag_6",
+      "brent_inr_proxy_level_lag_12",
+      "brent_inr_proxy_mom_pct_change_lag_1",
+      "brent_inr_proxy_mom_pct_change_lag_2",
+      "brent_inr_proxy_mom_pct_change_lag_3",
+      "brent_inr_proxy_mom_pct_change_lag_6",
+      "brent_inr_proxy_mom_pct_change_lag_12"
+    ],
+    "initial_train_rows": 83,
+    "tuning_train_rows": 82,
+    "validation_rows": 18,
+    "test_origins": 18,
+    "test_origin_start": "2023-06-01",
+    "test_origin_end": "2024-11-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 1.0,
+        "l1_ratio": 0.1
+      },
+      "random_forest": {
+        "max_depth": 4,
+        "min_samples_leaf": 4,
+        "n_estimators": 200
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "n_estimators": 100,
+        "subsample": 1.0
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C0_3m": {
+    "configuration": "C0",
+    "horizon": 3,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12"
+    ],
+    "initial_train_rows": 81,
+    "tuning_train_rows": 78,
+    "validation_rows": 18,
+    "test_origins": 18,
+    "test_origin_start": "2023-04-01",
+    "test_origin_end": "2024-09-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 1.0,
+        "l1_ratio": 0.1
+      },
+      "random_forest": {
+        "max_depth": 4,
+        "min_samples_leaf": 4,
+        "n_estimators": 100
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "n_estimators": 100,
+        "subsample": 0.8
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C1_3m": {
+    "configuration": "C1",
+    "horizon": 3,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "brent_usd_per_barrel_level_lag_1",
+      "brent_usd_per_barrel_level_lag_2",
+      "brent_usd_per_barrel_level_lag_3",
+      "brent_usd_per_barrel_level_lag_6",
+      "brent_usd_per_barrel_level_lag_12",
+      "brent_mom_pct_change_lag_1",
+      "brent_mom_pct_change_lag_2",
+      "brent_mom_pct_change_lag_3",
+      "brent_mom_pct_change_lag_6",
+      "brent_mom_pct_change_lag_12"
+    ],
+    "initial_train_rows": 81,
+    "tuning_train_rows": 78,
+    "validation_rows": 18,
+    "test_origins": 18,
+    "test_origin_start": "2023-04-01",
+    "test_origin_end": "2024-09-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 0.1,
+        "l1_ratio": 0.9
+      },
+      "random_forest": {
+        "max_depth": 4,
+        "min_samples_leaf": 4,
+        "n_estimators": 100
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "n_estimators": 100,
+        "subsample": 1.0
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C2_3m": {
+    "configuration": "C2",
+    "horizon": 3,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "fx_predicted_level",
+      "fx_predicted_change_pct"
+    ],
+    "initial_train_rows": 81,
+    "tuning_train_rows": 78,
+    "validation_rows": 18,
+    "test_origins": 18,
+    "test_origin_start": "2023-04-01",
+    "test_origin_end": "2024-09-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 1.0,
+        "l1_ratio": 0.5
+      },
+      "random_forest": {
+        "max_depth": 2,
+        "min_samples_leaf": 4,
+        "n_estimators": 100
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "n_estimators": 100,
+        "subsample": 0.8
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C3_3m": {
+    "configuration": "C3",
+    "horizon": 3,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "brent_inr_proxy_level_lag_1",
+      "brent_inr_proxy_level_lag_2",
+      "brent_inr_proxy_level_lag_3",
+      "brent_inr_proxy_level_lag_6",
+      "brent_inr_proxy_level_lag_12",
+      "brent_inr_proxy_mom_pct_change_lag_1",
+      "brent_inr_proxy_mom_pct_change_lag_2",
+      "brent_inr_proxy_mom_pct_change_lag_3",
+      "brent_inr_proxy_mom_pct_change_lag_6",
+      "brent_inr_proxy_mom_pct_change_lag_12"
+    ],
+    "initial_train_rows": 81,
+    "tuning_train_rows": 78,
+    "validation_rows": 18,
+    "test_origins": 18,
+    "test_origin_start": "2023-04-01",
+    "test_origin_end": "2024-09-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 0.1,
+        "l1_ratio": 0.9
+      },
+      "random_forest": {
+        "max_depth": 4,
+        "min_samples_leaf": 4,
+        "n_estimators": 200
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "n_estimators": 100,
+        "subsample": 0.8
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C0_6m": {
+    "configuration": "C0",
+    "horizon": 6,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12"
+    ],
+    "initial_train_rows": 79,
+    "tuning_train_rows": 73,
+    "validation_rows": 17,
+    "test_origins": 18,
+    "test_origin_start": "2023-01-01",
+    "test_origin_end": "2024-06-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 0.1,
+        "l1_ratio": 0.1
+      },
+      "random_forest": {
+        "max_depth": 2,
+        "min_samples_leaf": 4,
+        "n_estimators": 200
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "n_estimators": 100,
+        "subsample": 0.8
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C1_6m": {
+    "configuration": "C1",
+    "horizon": 6,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "brent_usd_per_barrel_level_lag_1",
+      "brent_usd_per_barrel_level_lag_2",
+      "brent_usd_per_barrel_level_lag_3",
+      "brent_usd_per_barrel_level_lag_6",
+      "brent_usd_per_barrel_level_lag_12",
+      "brent_mom_pct_change_lag_1",
+      "brent_mom_pct_change_lag_2",
+      "brent_mom_pct_change_lag_3",
+      "brent_mom_pct_change_lag_6",
+      "brent_mom_pct_change_lag_12"
+    ],
+    "initial_train_rows": 79,
+    "tuning_train_rows": 73,
+    "validation_rows": 17,
+    "test_origins": 18,
+    "test_origin_start": "2023-01-01",
+    "test_origin_end": "2024-06-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 1.0,
+        "l1_ratio": 0.9
+      },
+      "random_forest": {
+        "max_depth": 4,
+        "min_samples_leaf": 4,
+        "n_estimators": 100
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "n_estimators": 100,
+        "subsample": 1.0
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C2_6m": {
+    "configuration": "C2",
+    "horizon": 6,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "fx_predicted_level",
+      "fx_predicted_change_pct"
+    ],
+    "initial_train_rows": 79,
+    "tuning_train_rows": 73,
+    "validation_rows": 17,
+    "test_origins": 18,
+    "test_origin_start": "2023-01-01",
+    "test_origin_end": "2024-06-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 1.0,
+        "l1_ratio": 0.9
+      },
+      "random_forest": {
+        "max_depth": 2,
+        "min_samples_leaf": 2,
+        "n_estimators": 100
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "n_estimators": 100,
+        "subsample": 1.0
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  },
+  "C3_6m": {
+    "configuration": "C3",
+    "horizon": 6,
+    "feature_columns": [
+      "cpi_lag_1",
+      "cpi_lag_2",
+      "cpi_lag_3",
+      "cpi_lag_6",
+      "cpi_lag_12",
+      "brent_inr_proxy_level_lag_1",
+      "brent_inr_proxy_level_lag_2",
+      "brent_inr_proxy_level_lag_3",
+      "brent_inr_proxy_level_lag_6",
+      "brent_inr_proxy_level_lag_12",
+      "brent_inr_proxy_mom_pct_change_lag_1",
+      "brent_inr_proxy_mom_pct_change_lag_2",
+      "brent_inr_proxy_mom_pct_change_lag_3",
+      "brent_inr_proxy_mom_pct_change_lag_6",
+      "brent_inr_proxy_mom_pct_change_lag_12"
+    ],
+    "initial_train_rows": 79,
+    "tuning_train_rows": 73,
+    "validation_rows": 17,
+    "test_origins": 18,
+    "test_origin_start": "2023-01-01",
+    "test_origin_end": "2024-06-01",
+    "test_target_start": "2023-07-01",
+    "test_target_end": "2024-12-01",
+    "final_test_used_for_tuning": false,
+    "hyperparameters": {
+      "elastic_net": {
+        "alpha": 1.0,
+        "l1_ratio": 0.9
+      },
+      "random_forest": {
+        "max_depth": 2,
+        "min_samples_leaf": 4,
+        "n_estimators": 100
+      },
+      "xgboost": {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "n_estimators": 100,
+        "subsample": 1.0
+      }
+    },
+    "elastic_net_cv_convergence_warnings": 0,
+    "sarimax_order": [
+      1,
+      0,
+      0
+    ],
+    "sarimax_seasonal_order": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "sarimax_converged_origins": 18,
+    "sarimax_total_origins": 18
+  }
+}

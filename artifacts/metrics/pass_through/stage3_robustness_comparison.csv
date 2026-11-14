@@ -1,0 +1,17 @@
+specification,status,observations,p,q,bic,bic_delta,r_squared,note
+CPI baseline asymmetric log/log,estimated,126,3,0,277.897982443,0,0.761598145733,
+CPI lag-only FX,estimated,126,3,1,275.9287338,-1.96924864284,0.765295152741,Excludes same-month FX; lag structure remains preselected.
+"CPI six-month FX lag sensitivity (p=1,q=6)",estimated,126,1,6,335.809561962,57.9115795191,0.742828924666,Pre-specified slower-pass-through sensitivity; not used for primary selection.
+CPI publisher-reported inflation,estimated,126,3,0,292.707004064,,0.757920417185,Separate CPI published-rate outcome; no 2025 gap filling.
+CPI simple annual percent and simple FX percent,estimated,126,3,0,290.78024848,,0.7599570583,Distinct robustness transformations.
+WPI All Commodities simple annual percent and simple FX percent,estimated,126,3,0,360.60323446,,0.968385944561,Distinct robustness transformations.
+CPI Brent USD lagged change,estimated,126,3,0,282.273754548,4.37577210575,0.762467875962,Lagged imported-cost extension; local vintage remains unauthenticated.
+CPI Brent-INR proxy-only,estimated,126,3,0,272.43103073,-5.46695171251,0.762788440942,Approximate proxy only; no FX split terms due mechanical FX content.
+WPI All Commodities Brent USD lagged change,estimated,126,3,0,346.10262537,-7.265980898,0.970031827718,Lagged imported-cost extension; local vintage remains unauthenticated.
+WPI All Commodities Brent-INR proxy-only,estimated,126,3,0,337.849176485,-15.5194297827,0.969692393778,Approximate proxy only; no FX split terms due mechanical FX content.
+cpi_annual_log_inflation: omit historical 95th-percentile extreme changes,estimated,125,3,0,276.86730227,,0.760729454961,Threshold 4.07802% from 1990-2013; 1 Stage 3 months flagged across the common sample.
+wpi_all_commodities_annual_log_inflation: omit historical 95th-percentile extreme changes,estimated,125,3,0,350.444648237,,0.967283573484,Threshold 4.07802% from 1990-2013; 1 Stage 3 months flagged across the common sample.
+"cpi_annual_log_inflation: pre-2020 (restricted p=1,q=1)",estimated,68,1,1,149.8719265,,0.777476960709,Exploratory; period-specific estimation has limited power.
+"cpi_annual_log_inflation: 2020-onward (restricted p=1,q=1)",estimated,58,1,1,149.069907503,,0.468574948863,Exploratory; period-specific estimation has limited power.
+"wpi_all_commodities_annual_log_inflation: pre-2020 (restricted p=1,q=1)",estimated,68,1,1,199.343398118,,0.918825877739,Exploratory; period-specific estimation has limited power.
+"wpi_all_commodities_annual_log_inflation: 2020-onward (restricted p=1,q=1)",estimated,58,1,1,215.392018521,,0.951310976333,Exploratory; period-specific estimation has limited power.

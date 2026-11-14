@@ -1,0 +1,20 @@
+{
+  "model": "ARIMA",
+  "order": [
+    0,
+    1,
+    1
+  ],
+  "target": "usd_inr_monthly",
+  "fit_end": "2026-09-01",
+  "observations": 645,
+  "parameter_names": [
+    "ma.L1",
+    "sigma2"
+  ],
+  "parameters_rounded_12dp": [
+    0.255199937183,
+    0.443634255837
+  ],
+  "selection": "AIC on the initial training partition only"
+}

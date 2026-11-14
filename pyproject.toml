@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pome-el"
+version = "0.1.0"
+description = "AI-driven research framework for exchange-rate pass-through and inflation risk in India."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "POME EL Research Team" }]
+dependencies = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "scikit-learn",
+    "xgboost",
+    "shap",
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "streamlit",
+    "openpyxl",
+    "xlrd",
+    "PyYAML",
+    "tabulate",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra -q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

@@ -1,0 +1,5 @@
+outcome,test,statistic,degrees_of_freedom,p_value,replicates,block_length,seed,restriction,p_value_holm
+cpi_annual_log_inflation,moving-block bootstrap Wald test of cumulative response contrasts,0.0534105636878,3,0.996769190118,499,6,42,"depreciation response + equal-sized appreciation response = 0 at months 1, 3, 6",1
+wpi_all_commodities_annual_log_inflation,moving-block bootstrap Wald test of cumulative response contrasts,0.420291775016,3,0.936019515652,499,6,42,"depreciation response + equal-sized appreciation response = 0 at months 1, 3, 6",1
+wpi_fuel_power_annual_log_inflation,moving-block bootstrap Wald test of cumulative response contrasts,0.0394559574616,3,0.997940068238,499,6,42,"depreciation response + equal-sized appreciation response = 0 at months 1, 3, 6",1
+wpi_manufactured_annual_log_inflation,moving-block bootstrap Wald test of cumulative response contrasts,0.0406481969252,3,0.997846767612,499,6,42,"depreciation response + equal-sized appreciation response = 0 at months 1, 3, 6",1

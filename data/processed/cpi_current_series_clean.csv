@@ -1,0 +1,22 @@
+observation_date,series_label,base_year,year,month,state,sector,division,group,class,sub_class,item,code,index_value,inflation_value
+2025-01-01,Current,2024,2025,January,All India,Combined,CPI (General),,,,,,101.67,
+2025-02-01,Current,2024,2025,February,All India,Combined,CPI (General),,,,,,101.32,
+2025-03-01,Current,2024,2025,March,All India,Combined,CPI (General),,,,,,101.39,
+2025-04-01,Current,2024,2025,April,All India,Combined,CPI (General),,,,,,101.58,
+2025-05-01,Current,2024,2025,May,All India,Combined,CPI (General),,,,,,101.9,
+2025-06-01,Current,2024,2025,June,All India,Combined,CPI (General),,,,,,102.51,
+2025-07-01,Current,2024,2025,July,All India,Combined,CPI (General),,,,,,103.35,
+2025-08-01,Current,2024,2025,August,All India,Combined,CPI (General),,,,,,103.74,
+2025-09-01,Current,2024,2025,September,All India,Combined,CPI (General),,,,,,103.74,
+2025-10-01,Current,2024,2025,October,All India,Combined,CPI (General),,,,,,103.74,
+2025-11-01,Current,2024,2025,November,All India,Combined,CPI (General),,,,,,104.01,
+2025-12-01,Current,2024,2025,December,All India,Combined,CPI (General),,,,,,104.1,
+2026-01-01,Current,2024,2026,January,All India,Combined,CPI (General),,,,,,104.45,2.74
+2026-02-01,Current,2024,2026,February,All India,Combined,CPI (General),,,,,,104.57,3.21
+2026-03-01,Current,2024,2026,March,All India,Combined,CPI (General),,,,,,104.84,3.4
+2026-04-01,Current,2024,2026,April,All India,Combined,CPI (General),,,,,,105.12,3.48
+2026-05-01,Current,2024,2026,May,All India,Combined,CPI (General),,,,,,105.91,3.93
+2026-06-01,Current,2024,2026,June,All India,Combined,CPI (General),,,,,,107.0,4.38
+2026-07-01,Current,2024,2026,July,All India,Combined,CPI (General),,,,,,107.95,4.45
+2026-08-01,Current,2024,2026,August,All India,Combined,CPI (General),,,,,,108.74,4.83
+2026-09-01,Current,2024,2026,September,All India,Combined,CPI (General),,,,,,109.49,5.54

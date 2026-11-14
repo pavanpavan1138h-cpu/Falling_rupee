@@ -1,0 +1,10 @@
+left_variable,right_variable,n_common,pearson,spearman
+usd_inr_mom_change,cpi_published_inflation,141,-5.166045555256181e-05,0.013729595053749915
+usd_inr_depreciation_log_change,cpi_published_inflation,141,-0.03015117566425929,0.013777716560300784
+usd_inr_appreciation_log_change,cpi_published_inflation,141,-0.03690185435719258,-0.046898879902363966
+brent_mom_pct_change,cpi_published_inflation,141,-0.015738300289075392,-0.032960446622644406
+brent_inr_proxy_mom_pct_change,cpi_published_inflation,141,-0.018585568598023943,-0.031081029027198125
+Trade_NEER_mom_pct_change,cpi_published_inflation,141,0.06303509824916133,0.05882069633025881
+Trade_REER_mom_pct_change,cpi_published_inflation,141,0.12172110133200265,0.09376324479878509
+repo_rate_change_pp,cpi_published_inflation,141,0.2266189383094273,0.2411981137405953
+wpi_all_commodities_mom_pct_change,cpi_published_inflation,136,0.09760115038296653,0.08906371698269032

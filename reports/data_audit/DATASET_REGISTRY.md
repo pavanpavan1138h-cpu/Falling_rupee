@@ -1,0 +1,21 @@
+# POME EL Dataset Registry
+
+Only file facts directly verified during inspection are recorded as verified. Missing source or publication information remains `PENDING VERIFICATION`.
+
+| Dataset | Original filename | Format / sheet | File size (KB) | Observation coverage | Count | Source / vintage / units | Verification status |
+|---|---|---|---:|---|---:|---|---|
+| Brent monthly | `02_Brent_Crude_Oil_Spot_Price_Monthly_USD_per_Barrel.csv` | CSV | 7.96 | 1987-05 to 2026-10 | 474 months | EIA source series `MCOILBRENTEU`; official metadata verifies USD/barrel, monthly, not seasonally adjusted. Local retrieval date, vintage, exact monthly calculation, and full value match pending. | Readable; series definition verified, file vintage not |
+| USD/INR daily | `03_USD_INR_Exchange_Rate_Daily.csv` | CSV | 254.31 | 1973-01-02 to 2026-10-30 | 14,044 rows | Federal Reserve H.10/FRED `DEXINUS`; INR per USD, daily noon buying rate in New York, not seasonally adjusted. Local vintage/full match pending. | Readable; 552 numeric nulls need source-calendar classification |
+| USD/INR monthly | `03_USD_INR_Exchange_Rate_Monthly.csv` | CSV | 11.89 | 1973-01 to 2026-10 | 646 months | Federal Reserve G.5/FRED `EXINUS`; INR per USD, monthly average of available daily rates, not seasonally adjusted; incomplete current month may be preliminary. Local vintage/full match pending. | Readable; series definition verified, file vintage not |
+| RBI repo rate | `04_India_RBI_Policy_Repo_Rate_Monthly.csv` | CSV | 2.55 | 2013-01 to 2026-09 | 165 months | RBI/DBIE is the official access route; exact local series identifier, unit, observation rule, retrieval date, and vintage pending. Month-end setting is an inference from the values. | Readable; not source-reconciled |
+| NEER/REER | `05_India_RBI_NEER_REER_40_Currency_Monthly.csv` | CSV; actual table follows metadata | 8.29 | 2013-01 to 2026-09 | 165 months | RBI 40-currency methodology and 2015–16=100 base verified from official publications. Local values, source export, retrieval date, and vintage pending. | Actual monthly table identified; four fields; no dated data match |
+| CPI current | `06_India_CPI_General_Combined_Monthly_2024_Base.xlsx` | XLSX, `CPI Data` | 22.63 | 2025-01 to 2026-09 | 21 months | MoSPI confirms 2024=100 design, HCES 2023–24 weights, and current-series scope. Local workbook origin, extraction date, exact values, and vintage pending. | Readable; local index complete; source-file authenticity not verified |
+| CPI back series | `07_India_CPI_General_Combined_Back_Series_2024_Base.xlsx` | XLSX, `CPI Data` | 64.46 | 2013-01 to 2024-12 | 144 months | MoSPI confirms combined general-index back-series scope and general-index-level linking. Local workbook origin, extraction date, exact values, and vintage pending. | Readable; local index complete; source-file authenticity not verified |
+| WPI | `08_India_WPI_Monthly_Index_2011_12_Base_Raw.xls` | XLS, `MONTHLY_INDEX` | 1,308.50 | 2012-04 to 2026-04 | 169 months × 869 labeled series | OEA/DPIIT source and exact sheet-content match to later official download verified; official base is 2011-12=100 and weights are percent. Local retrieval date, formal final status for April 2026=167.6, and zero convention pending. | Source/content match verified; 505 numeric zero entries need interpretation |
+
+## WPI registry notes
+
+- The worksheet contains 870 physical rows including one header row, and 172 columns including three identifier/weight columns and 169 month columns.
+- The row named `All commodities` has code `1000000000` and `COMM_WT` 100.0. Major component rows show Primary Articles 22.61756, Fuel & Power 13.1519, and Manufactured Products 64.23054; these three component weights sum to 100.0. The OEA April 2026 release labels weights in percent; the local workbook itself has no methodology note.
+- The May 14, 2026 OEA April release lists All Commodities April 2026 at 167.0 provisional; the later official 2011-12 workbook and local file both list 167.6. This is a material between-vintage difference. The release states provisional values are finalized after 10 weeks and frozen thereafter, but the reviewed sources do not formally identify 167.6 as the finalized observation.
+- The file itself contains no accessible workbook document properties, source statement, footnotes, or revision/vintage notes.

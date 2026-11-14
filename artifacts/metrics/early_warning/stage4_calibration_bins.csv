@@ -1,0 +1,13 @@
+horizon_months,configuration,model,bin_number,probability_interval,n,mean_predicted_probability,observed_elevated_rate,elevated_count,interpretation
+1,C0,logistic_regression,1,"(-0.001, 0.25]",8,0.115640524432,0.25,2,descriptive; sparse test bins are unstable
+1,C0,logistic_regression,2,"(0.25, 0.5]",6,0.330868813074,0.166666666667,1,descriptive; sparse test bins are unstable
+1,C0,logistic_regression,3,"(0.5, 0.75]",2,0.71144706115,0,0,descriptive; sparse test bins are unstable
+1,C0,logistic_regression,4,"(0.75, 1.0]",2,0.84282821129,0,0,descriptive; sparse test bins are unstable
+3,C3,logistic_regression,1,"(-0.001, 0.25]",9,0.147645111573,0.111111111111,1,descriptive; sparse test bins are unstable
+3,C3,logistic_regression,2,"(0.25, 0.5]",8,0.358800159801,0.25,2,descriptive; sparse test bins are unstable
+3,C3,logistic_regression,3,"(0.5, 0.75]",1,0.622072029947,0,0,descriptive; sparse test bins are unstable
+3,C3,logistic_regression,4,"(0.75, 1.0]",0,NA,NA,0,descriptive; sparse test bins are unstable
+6,C3,xgboost,1,"(-0.001, 0.25]",0,NA,NA,0,descriptive; sparse test bins are unstable
+6,C3,xgboost,2,"(0.25, 0.5]",10,0.337516653538,0.1,1,descriptive; sparse test bins are unstable
+6,C3,xgboost,3,"(0.5, 0.75]",8,0.610802263021,0.25,2,descriptive; sparse test bins are unstable
+6,C3,xgboost,4,"(0.75, 1.0]",0,NA,NA,0,descriptive; sparse test bins are unstable

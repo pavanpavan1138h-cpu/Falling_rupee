@@ -1,0 +1,8 @@
+{
+  "after_inventory_sha256": "1606bf8036aa0aca7fe226822353d7338ab25ae61fe565a1d9b114f5a7a1e8b7",
+  "before_inventory_sha256": "1606bf8036aa0aca7fe226822353d7338ab25ae61fe565a1d9b114f5a7a1e8b7",
+  "changed_paths": [],
+  "protected_file_count_after": 131,
+  "protected_file_count_before": 131,
+  "status": "PASS"
+}

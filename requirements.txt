@@ -1,0 +1,23 @@
+# Core data science and statistical tooling
+pandas
+numpy
+scipy
+statsmodels
+scikit-learn
+xgboost
+shap
+
+# Visualization and dashboarding
+matplotlib
+seaborn
+plotly
+streamlit
+openpyxl
+xlrd
+PyYAML
+tabulate
+
+# Testing and quality tooling
+pytest
+ruff
+mypy

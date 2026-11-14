@@ -1,0 +1,10 @@
+{
+  "brent_features.csv": "f3c6deb821567a8c0df62b2ccbfbeb599efeec8580c4b9dae92f6eb3fad17188",
+  "brent_inr_proxy_features.csv": "28f4fc8fc721cf356914fe82866e30cc637d805be9af9d7e23c224e9fa99f427",
+  "cpi_features.csv": "f96f3737ea3e9ecdbd3854955e2cfade842d50ff5e5d1802cb8d3b690258a71c",
+  "exchange_rate_features.csv": "f0afe3d45faf820b522fa55bf6789a68f08279f21975295dc64e6e98f05d5064",
+  "neer_reer_features.csv": "70a2e2fb68b080461095a319c034612d7ed139aeb4050c6f65338e385106b66b",
+  "repo_rate_features.csv": "68c941ff64ef3f5d92dcf19dd443ef05bc693da799c69fc123b4605d9711f9aa",
+  "research_master_feature_panel.csv": "e86415fc9e9f9b7d1b1bd6a66f32a684126381706b0428fff8923f8d8e36fe4f",
+  "wpi_features.csv": "d69ac995fb4112ed328f12afeaf009a4d8d2aa81d4473aa2bb25908beba1e33c"
+}

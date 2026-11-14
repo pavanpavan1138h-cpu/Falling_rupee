@@ -1,0 +1,51 @@
+{
+  "C0": [
+    "cpi_lag_1",
+    "cpi_lag_3",
+    "cpi_lag_6",
+    "cpi_lag_12",
+    "cpi_change_1m",
+    "cpi_mean_3m",
+    "cpi_volatility_6m"
+  ],
+  "C1": [
+    "cpi_lag_1",
+    "cpi_lag_3",
+    "cpi_lag_6",
+    "cpi_lag_12",
+    "cpi_change_1m",
+    "cpi_mean_3m",
+    "cpi_volatility_6m",
+    "fx_log_return_1m",
+    "fx_cumulative_return_3m",
+    "fx_volatility_6m"
+  ],
+  "C2": [
+    "cpi_lag_1",
+    "cpi_lag_3",
+    "cpi_lag_6",
+    "cpi_lag_12",
+    "cpi_change_1m",
+    "cpi_mean_3m",
+    "cpi_volatility_6m",
+    "fx_log_return_1m",
+    "fx_cumulative_return_3m",
+    "fx_volatility_6m",
+    "brent_log_return_1m",
+    "brent_cumulative_return_3m"
+  ],
+  "C3": [
+    "cpi_lag_1",
+    "cpi_lag_3",
+    "cpi_lag_6",
+    "cpi_lag_12",
+    "cpi_change_1m",
+    "cpi_mean_3m",
+    "cpi_volatility_6m",
+    "fx_log_return_1m",
+    "fx_cumulative_return_3m",
+    "fx_volatility_6m",
+    "brent_inr_proxy_log_return_1m",
+    "brent_inr_proxy_cumulative_return_3m"
+  ]
+}

@@ -1,0 +1,3 @@
+outcome,break_date,p,q,observations,wald_statistic,degrees_of_freedom,p_value,p_value_holm
+cpi_annual_log_inflation,2020-03-01,3,0,126,3.64205627219,2,0.161859252017,0.161859252017
+wpi_all_commodities_annual_log_inflation,2020-03-01,3,0,126,9.95118019391,2,0.00690444344606,0.0138088868921

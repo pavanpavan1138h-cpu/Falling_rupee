@@ -1,0 +1,1056 @@
+{
+  "stage": "Stage 2 CPI inflation forecasting",
+  "research_question": "Does imported-cost information improve CPI inflation forecasts compared with CPI-history-only models?",
+  "seed": 42,
+  "horizons_months": [
+    1,
+    3,
+    6
+  ],
+  "cpi_target": {
+    "source_file": "C:\\Users\\Ram Charan. R\\Documents\\POME_EL\\data\\processed\\cpi_monthly_clean.csv",
+    "source_rows": 165,
+    "source_date_start": "2013-01-01",
+    "source_date_end": "2026-09-01",
+    "published_observations": 141,
+    "published_missing": 24,
+    "published_series_segments": [
+      {
+        "start": "2014-01-01",
+        "end": "2024-12-01",
+        "observations": 132
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-09-01",
+        "observations": 9
+      }
+    ],
+    "selected_segment": {
+      "start": "2014-01-01",
+      "end": "2024-12-01",
+      "observations": 132
+    },
+    "selected_target_column": "inflation_value (published)",
+    "selected_target_observations": 132,
+    "index_substitution": false
+  },
+  "fx_forecast_archive": {
+    "stage1_arima_order_verified": [
+      0,
+      1,
+      1
+    ],
+    "stage1_predictions_reused_arima": 13,
+    "stage1_predictions_reused_random_walk": 13,
+    "generated_historical_arima_rows": 383,
+    "forecast_origin_count": 132,
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "generated_as_retrospective_not_real_time": true
+  },
+  "configuration_definitions": {
+    "C0": "published CPI inflation lags only",
+    "C1": "C0 plus lagged Brent USD price and monthly change",
+    "C2": "C0 plus predicted USD/INR level and predicted change at horizon",
+    "C3": "C0 plus lagged Brent-INR approximate imported-cost proxy"
+  },
+  "environment": {
+    "python": "3.13.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1",
+    "statsmodels": "0.15.0",
+    "xgboost": "3.4.1"
+  },
+  "no_synthetic_research_data": true,
+  "real_time_backtest": false,
+  "model_metadata": {
+    "C0_1m": {
+      "configuration": "C0",
+      "horizon": 1,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12"
+      ],
+      "initial_train_rows": 83,
+      "tuning_train_rows": 82,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-06-01",
+      "test_origin_end": "2024-11-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 0.1,
+          "l1_ratio": 0.9
+        },
+        "random_forest": {
+          "max_depth": 2,
+          "min_samples_leaf": 2,
+          "n_estimators": 200
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 2,
+          "n_estimators": 100,
+          "subsample": 0.8
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C1_1m": {
+      "configuration": "C1",
+      "horizon": 1,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_usd_per_barrel_level_lag_1",
+        "brent_usd_per_barrel_level_lag_2",
+        "brent_usd_per_barrel_level_lag_3",
+        "brent_usd_per_barrel_level_lag_6",
+        "brent_usd_per_barrel_level_lag_12",
+        "brent_mom_pct_change_lag_1",
+        "brent_mom_pct_change_lag_2",
+        "brent_mom_pct_change_lag_3",
+        "brent_mom_pct_change_lag_6",
+        "brent_mom_pct_change_lag_12"
+      ],
+      "initial_train_rows": 83,
+      "tuning_train_rows": 82,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-06-01",
+      "test_origin_end": "2024-11-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 1.0,
+          "l1_ratio": 0.1
+        },
+        "random_forest": {
+          "max_depth": 4,
+          "min_samples_leaf": 4,
+          "n_estimators": 200
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 2,
+          "n_estimators": 100,
+          "subsample": 0.8
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C2_1m": {
+      "configuration": "C2",
+      "horizon": 1,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "fx_predicted_level",
+        "fx_predicted_change_pct"
+      ],
+      "initial_train_rows": 83,
+      "tuning_train_rows": 82,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-06-01",
+      "test_origin_end": "2024-11-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 0.1,
+          "l1_ratio": 0.9
+        },
+        "random_forest": {
+          "max_depth": 4,
+          "min_samples_leaf": 2,
+          "n_estimators": 200
+        },
+        "xgboost": {
+          "learning_rate": 0.06,
+          "max_depth": 3,
+          "n_estimators": 100,
+          "subsample": 0.8
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C3_1m": {
+      "configuration": "C3",
+      "horizon": 1,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_inr_proxy_level_lag_1",
+        "brent_inr_proxy_level_lag_2",
+        "brent_inr_proxy_level_lag_3",
+        "brent_inr_proxy_level_lag_6",
+        "brent_inr_proxy_level_lag_12",
+        "brent_inr_proxy_mom_pct_change_lag_1",
+        "brent_inr_proxy_mom_pct_change_lag_2",
+        "brent_inr_proxy_mom_pct_change_lag_3",
+        "brent_inr_proxy_mom_pct_change_lag_6",
+        "brent_inr_proxy_mom_pct_change_lag_12"
+      ],
+      "initial_train_rows": 83,
+      "tuning_train_rows": 82,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-06-01",
+      "test_origin_end": "2024-11-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 1.0,
+          "l1_ratio": 0.1
+        },
+        "random_forest": {
+          "max_depth": 4,
+          "min_samples_leaf": 4,
+          "n_estimators": 200
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 2,
+          "n_estimators": 100,
+          "subsample": 1.0
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C0_3m": {
+      "configuration": "C0",
+      "horizon": 3,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12"
+      ],
+      "initial_train_rows": 81,
+      "tuning_train_rows": 78,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-04-01",
+      "test_origin_end": "2024-09-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 1.0,
+          "l1_ratio": 0.1
+        },
+        "random_forest": {
+          "max_depth": 4,
+          "min_samples_leaf": 4,
+          "n_estimators": 100
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 2,
+          "n_estimators": 100,
+          "subsample": 0.8
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C1_3m": {
+      "configuration": "C1",
+      "horizon": 3,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_usd_per_barrel_level_lag_1",
+        "brent_usd_per_barrel_level_lag_2",
+        "brent_usd_per_barrel_level_lag_3",
+        "brent_usd_per_barrel_level_lag_6",
+        "brent_usd_per_barrel_level_lag_12",
+        "brent_mom_pct_change_lag_1",
+        "brent_mom_pct_change_lag_2",
+        "brent_mom_pct_change_lag_3",
+        "brent_mom_pct_change_lag_6",
+        "brent_mom_pct_change_lag_12"
+      ],
+      "initial_train_rows": 81,
+      "tuning_train_rows": 78,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-04-01",
+      "test_origin_end": "2024-09-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 0.1,
+          "l1_ratio": 0.9
+        },
+        "random_forest": {
+          "max_depth": 4,
+          "min_samples_leaf": 4,
+          "n_estimators": 100
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 2,
+          "n_estimators": 100,
+          "subsample": 1.0
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C2_3m": {
+      "configuration": "C2",
+      "horizon": 3,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "fx_predicted_level",
+        "fx_predicted_change_pct"
+      ],
+      "initial_train_rows": 81,
+      "tuning_train_rows": 78,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-04-01",
+      "test_origin_end": "2024-09-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 1.0,
+          "l1_ratio": 0.5
+        },
+        "random_forest": {
+          "max_depth": 2,
+          "min_samples_leaf": 4,
+          "n_estimators": 100
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 2,
+          "n_estimators": 100,
+          "subsample": 0.8
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C3_3m": {
+      "configuration": "C3",
+      "horizon": 3,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_inr_proxy_level_lag_1",
+        "brent_inr_proxy_level_lag_2",
+        "brent_inr_proxy_level_lag_3",
+        "brent_inr_proxy_level_lag_6",
+        "brent_inr_proxy_level_lag_12",
+        "brent_inr_proxy_mom_pct_change_lag_1",
+        "brent_inr_proxy_mom_pct_change_lag_2",
+        "brent_inr_proxy_mom_pct_change_lag_3",
+        "brent_inr_proxy_mom_pct_change_lag_6",
+        "brent_inr_proxy_mom_pct_change_lag_12"
+      ],
+      "initial_train_rows": 81,
+      "tuning_train_rows": 78,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-04-01",
+      "test_origin_end": "2024-09-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 0.1,
+          "l1_ratio": 0.9
+        },
+        "random_forest": {
+          "max_depth": 4,
+          "min_samples_leaf": 4,
+          "n_estimators": 200
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "n_estimators": 100,
+          "subsample": 0.8
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C0_6m": {
+      "configuration": "C0",
+      "horizon": 6,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12"
+      ],
+      "initial_train_rows": 79,
+      "tuning_train_rows": 73,
+      "validation_rows": 17,
+      "test_origins": 18,
+      "test_origin_start": "2023-01-01",
+      "test_origin_end": "2024-06-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 0.1,
+          "l1_ratio": 0.1
+        },
+        "random_forest": {
+          "max_depth": 2,
+          "min_samples_leaf": 4,
+          "n_estimators": 200
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 2,
+          "n_estimators": 100,
+          "subsample": 0.8
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C1_6m": {
+      "configuration": "C1",
+      "horizon": 6,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_usd_per_barrel_level_lag_1",
+        "brent_usd_per_barrel_level_lag_2",
+        "brent_usd_per_barrel_level_lag_3",
+        "brent_usd_per_barrel_level_lag_6",
+        "brent_usd_per_barrel_level_lag_12",
+        "brent_mom_pct_change_lag_1",
+        "brent_mom_pct_change_lag_2",
+        "brent_mom_pct_change_lag_3",
+        "brent_mom_pct_change_lag_6",
+        "brent_mom_pct_change_lag_12"
+      ],
+      "initial_train_rows": 79,
+      "tuning_train_rows": 73,
+      "validation_rows": 17,
+      "test_origins": 18,
+      "test_origin_start": "2023-01-01",
+      "test_origin_end": "2024-06-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 1.0,
+          "l1_ratio": 0.9
+        },
+        "random_forest": {
+          "max_depth": 4,
+          "min_samples_leaf": 4,
+          "n_estimators": 100
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "n_estimators": 100,
+          "subsample": 1.0
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C2_6m": {
+      "configuration": "C2",
+      "horizon": 6,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "fx_predicted_level",
+        "fx_predicted_change_pct"
+      ],
+      "initial_train_rows": 79,
+      "tuning_train_rows": 73,
+      "validation_rows": 17,
+      "test_origins": 18,
+      "test_origin_start": "2023-01-01",
+      "test_origin_end": "2024-06-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 1.0,
+          "l1_ratio": 0.9
+        },
+        "random_forest": {
+          "max_depth": 2,
+          "min_samples_leaf": 2,
+          "n_estimators": 100
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "n_estimators": 100,
+          "subsample": 1.0
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    },
+    "C3_6m": {
+      "configuration": "C3",
+      "horizon": 6,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_inr_proxy_level_lag_1",
+        "brent_inr_proxy_level_lag_2",
+        "brent_inr_proxy_level_lag_3",
+        "brent_inr_proxy_level_lag_6",
+        "brent_inr_proxy_level_lag_12",
+        "brent_inr_proxy_mom_pct_change_lag_1",
+        "brent_inr_proxy_mom_pct_change_lag_2",
+        "brent_inr_proxy_mom_pct_change_lag_3",
+        "brent_inr_proxy_mom_pct_change_lag_6",
+        "brent_inr_proxy_mom_pct_change_lag_12"
+      ],
+      "initial_train_rows": 79,
+      "tuning_train_rows": 73,
+      "validation_rows": 17,
+      "test_origins": 18,
+      "test_origin_start": "2023-01-01",
+      "test_origin_end": "2024-06-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01",
+      "final_test_used_for_tuning": false,
+      "hyperparameters": {
+        "elastic_net": {
+          "alpha": 1.0,
+          "l1_ratio": 0.9
+        },
+        "random_forest": {
+          "max_depth": 2,
+          "min_samples_leaf": 4,
+          "n_estimators": 100
+        },
+        "xgboost": {
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "n_estimators": 100,
+          "subsample": 1.0
+        }
+      },
+      "elastic_net_cv_convergence_warnings": 0,
+      "sarimax_order": [
+        1,
+        0,
+        0
+      ],
+      "sarimax_seasonal_order": [
+        0,
+        0,
+        0,
+        12
+      ],
+      "sarimax_converged_origins": 18,
+      "sarimax_total_origins": 18
+    }
+  },
+  "split_metadata": {
+    "1m": {
+      "initial_train_rows": 83,
+      "tuning_train_rows": 82,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-06-01",
+      "test_origin_end": "2024-11-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01"
+    },
+    "3m": {
+      "initial_train_rows": 81,
+      "tuning_train_rows": 78,
+      "validation_rows": 18,
+      "test_origins": 18,
+      "test_origin_start": "2023-04-01",
+      "test_origin_end": "2024-09-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01"
+    },
+    "6m": {
+      "initial_train_rows": 79,
+      "tuning_train_rows": 73,
+      "validation_rows": 17,
+      "test_origins": 18,
+      "test_origin_start": "2023-01-01",
+      "test_origin_end": "2024-06-01",
+      "test_target_start": "2023-07-01",
+      "test_target_end": "2024-12-01"
+    }
+  },
+  "feature_coverage": {
+    "C0_1m": {
+      "observations": 119,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-11-01",
+      "target_start": "2015-02-01",
+      "target_end": "2024-12-01",
+      "feature_count": 5,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12"
+      ]
+    },
+    "C1_1m": {
+      "observations": 119,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-11-01",
+      "target_start": "2015-02-01",
+      "target_end": "2024-12-01",
+      "feature_count": 15,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_usd_per_barrel_level_lag_1",
+        "brent_usd_per_barrel_level_lag_2",
+        "brent_usd_per_barrel_level_lag_3",
+        "brent_usd_per_barrel_level_lag_6",
+        "brent_usd_per_barrel_level_lag_12",
+        "brent_mom_pct_change_lag_1",
+        "brent_mom_pct_change_lag_2",
+        "brent_mom_pct_change_lag_3",
+        "brent_mom_pct_change_lag_6",
+        "brent_mom_pct_change_lag_12"
+      ]
+    },
+    "C2_1m": {
+      "observations": 119,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-11-01",
+      "target_start": "2015-02-01",
+      "target_end": "2024-12-01",
+      "feature_count": 7,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "fx_predicted_level",
+        "fx_predicted_change_pct"
+      ]
+    },
+    "C3_1m": {
+      "observations": 119,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-11-01",
+      "target_start": "2015-02-01",
+      "target_end": "2024-12-01",
+      "feature_count": 15,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_inr_proxy_level_lag_1",
+        "brent_inr_proxy_level_lag_2",
+        "brent_inr_proxy_level_lag_3",
+        "brent_inr_proxy_level_lag_6",
+        "brent_inr_proxy_level_lag_12",
+        "brent_inr_proxy_mom_pct_change_lag_1",
+        "brent_inr_proxy_mom_pct_change_lag_2",
+        "brent_inr_proxy_mom_pct_change_lag_3",
+        "brent_inr_proxy_mom_pct_change_lag_6",
+        "brent_inr_proxy_mom_pct_change_lag_12"
+      ]
+    },
+    "C0_3m": {
+      "observations": 117,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-09-01",
+      "target_start": "2015-04-01",
+      "target_end": "2024-12-01",
+      "feature_count": 5,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12"
+      ]
+    },
+    "C1_3m": {
+      "observations": 117,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-09-01",
+      "target_start": "2015-04-01",
+      "target_end": "2024-12-01",
+      "feature_count": 15,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_usd_per_barrel_level_lag_1",
+        "brent_usd_per_barrel_level_lag_2",
+        "brent_usd_per_barrel_level_lag_3",
+        "brent_usd_per_barrel_level_lag_6",
+        "brent_usd_per_barrel_level_lag_12",
+        "brent_mom_pct_change_lag_1",
+        "brent_mom_pct_change_lag_2",
+        "brent_mom_pct_change_lag_3",
+        "brent_mom_pct_change_lag_6",
+        "brent_mom_pct_change_lag_12"
+      ]
+    },
+    "C2_3m": {
+      "observations": 117,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-09-01",
+      "target_start": "2015-04-01",
+      "target_end": "2024-12-01",
+      "feature_count": 7,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "fx_predicted_level",
+        "fx_predicted_change_pct"
+      ]
+    },
+    "C3_3m": {
+      "observations": 117,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-09-01",
+      "target_start": "2015-04-01",
+      "target_end": "2024-12-01",
+      "feature_count": 15,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_inr_proxy_level_lag_1",
+        "brent_inr_proxy_level_lag_2",
+        "brent_inr_proxy_level_lag_3",
+        "brent_inr_proxy_level_lag_6",
+        "brent_inr_proxy_level_lag_12",
+        "brent_inr_proxy_mom_pct_change_lag_1",
+        "brent_inr_proxy_mom_pct_change_lag_2",
+        "brent_inr_proxy_mom_pct_change_lag_3",
+        "brent_inr_proxy_mom_pct_change_lag_6",
+        "brent_inr_proxy_mom_pct_change_lag_12"
+      ]
+    },
+    "C0_6m": {
+      "observations": 114,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-06-01",
+      "target_start": "2015-07-01",
+      "target_end": "2024-12-01",
+      "feature_count": 5,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12"
+      ]
+    },
+    "C1_6m": {
+      "observations": 114,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-06-01",
+      "target_start": "2015-07-01",
+      "target_end": "2024-12-01",
+      "feature_count": 15,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_usd_per_barrel_level_lag_1",
+        "brent_usd_per_barrel_level_lag_2",
+        "brent_usd_per_barrel_level_lag_3",
+        "brent_usd_per_barrel_level_lag_6",
+        "brent_usd_per_barrel_level_lag_12",
+        "brent_mom_pct_change_lag_1",
+        "brent_mom_pct_change_lag_2",
+        "brent_mom_pct_change_lag_3",
+        "brent_mom_pct_change_lag_6",
+        "brent_mom_pct_change_lag_12"
+      ]
+    },
+    "C2_6m": {
+      "observations": 114,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-06-01",
+      "target_start": "2015-07-01",
+      "target_end": "2024-12-01",
+      "feature_count": 7,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "fx_predicted_level",
+        "fx_predicted_change_pct"
+      ]
+    },
+    "C3_6m": {
+      "observations": 114,
+      "origin_start": "2015-01-01",
+      "origin_end": "2024-06-01",
+      "target_start": "2015-07-01",
+      "target_end": "2024-12-01",
+      "feature_count": 15,
+      "feature_columns": [
+        "cpi_lag_1",
+        "cpi_lag_2",
+        "cpi_lag_3",
+        "cpi_lag_6",
+        "cpi_lag_12",
+        "brent_inr_proxy_level_lag_1",
+        "brent_inr_proxy_level_lag_2",
+        "brent_inr_proxy_level_lag_3",
+        "brent_inr_proxy_level_lag_6",
+        "brent_inr_proxy_level_lag_12",
+        "brent_inr_proxy_mom_pct_change_lag_1",
+        "brent_inr_proxy_mom_pct_change_lag_2",
+        "brent_inr_proxy_mom_pct_change_lag_3",
+        "brent_inr_proxy_mom_pct_change_lag_6",
+        "brent_inr_proxy_mom_pct_change_lag_12"
+      ]
+    }
+  },
+  "target_high_inflation_thresholds": {
+    "1": 6.552000000000001,
+    "3": 6.6129999999999995,
+    "6": 6.668
+  },
+  "training_brent_spike_thresholds": {
+    "1": 18.656430630525968,
+    "3": 17.345771930874307,
+    "6": 17.755352774515444
+  },
+  "statistical_significance_tests": "No Diebold-Mariano test conducted.",
+  "prediction_intervals": "Not implemented.",
+  "data_integrity": {
+    "status": "unchanged",
+    "files_checked": 30,
+    "changed_files": []
+  },
+  "visualizations": [
+    "visualizations\\inflation\\rmse_comparison_1m.png",
+    "visualizations\\inflation\\sarimax_forecasts_1m.png",
+    "visualizations\\inflation\\rmse_comparison_3m.png",
+    "visualizations\\inflation\\sarimax_forecasts_3m.png",
+    "visualizations\\inflation\\rmse_comparison_6m.png",
+    "visualizations\\inflation\\sarimax_forecasts_6m.png"
+  ]
+}

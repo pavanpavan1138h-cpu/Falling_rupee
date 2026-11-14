@@ -1,0 +1,146 @@
+# POME EL research data contracts
+# This file is a template for future research data ingestion and validation.
+# It intentionally does not assume verified schemas or exact column names.
+
+version: 1
+
+contracts:
+  - dataset_id: exchange_rate
+    category: Exchange-rate data
+    expected_frequency: pending_inspection
+    expected_date_field: pending_inspection
+    expected_variable_definitions:
+      - pending_inspection
+    units:
+      exchange_rate: pending_inspection
+    permitted_data_types:
+      exchange_rate: pending_inspection
+    missing_value_rules:
+      exchange_rate: "null or not available"
+    duplicate_date_policy: "one observation per date for each series"
+    validation_requirements:
+      - date continuity
+      - duplicate check
+      - source reconciliation
+    source_information: "Pending inspection"
+    known_limitations: "Pending inspection"
+
+  - dataset_id: crude_oil
+    category: International crude oil data
+    expected_frequency: pending_inspection
+    expected_date_field: pending_inspection
+    expected_variable_definitions:
+      - pending_inspection
+    units:
+      crude_price: pending_inspection
+    permitted_data_types:
+      crude_price: pending_inspection
+    missing_value_rules:
+      crude_price: "null or not available"
+    duplicate_date_policy: "one observation per date for each series"
+    validation_requirements:
+      - date continuity
+      - unit check
+      - source reconciliation
+    source_information: "Pending inspection"
+    known_limitations: "Pending inspection"
+
+  - dataset_id: indian_cpi
+    category: Indian CPI data
+    expected_frequency: pending_inspection
+    expected_date_field: pending_inspection
+    expected_variable_definitions:
+      - pending_inspection
+    units:
+      cpi_index: pending_inspection
+    permitted_data_types:
+      cpi_index: pending_inspection
+    missing_value_rules:
+      cpi_index: "null or not available"
+    duplicate_date_policy: "one observation per date for each series"
+    validation_requirements:
+      - date continuity
+      - source reconciliation
+      - missing-value audit
+    source_information: "Pending inspection"
+    known_limitations: "Pending inspection"
+
+  - dataset_id: rbi_policy_rate
+    category: RBI policy-rate data
+    expected_frequency: pending_inspection
+    expected_date_field: pending_inspection
+    expected_variable_definitions:
+      - pending_inspection
+    units:
+      policy_rate: pending_inspection
+    permitted_data_types:
+      policy_rate: pending_inspection
+    missing_value_rules:
+      policy_rate: "null or not available"
+    duplicate_date_policy: "one observation per date for each series"
+    validation_requirements:
+      - date continuity
+      - value plausibility
+      - source reconciliation
+    source_information: "Pending inspection"
+    known_limitations: "Pending inspection"
+
+  - dataset_id: neer_reer
+    category: NEER/REER data
+    expected_frequency: pending_inspection
+    expected_date_field: pending_inspection
+    expected_variable_definitions:
+      - pending_inspection
+    units:
+      reer_index: pending_inspection
+    permitted_data_types:
+      reer_index: pending_inspection
+    missing_value_rules:
+      reer_index: "null or not available"
+    duplicate_date_policy: "one observation per date for each series"
+    validation_requirements:
+      - date continuity
+      - index consistency
+      - source reconciliation
+    source_information: "Pending inspection"
+    known_limitations: "Pending inspection"
+
+  - dataset_id: indian_wpi
+    category: Indian WPI data
+    expected_frequency: pending_inspection
+    expected_date_field: pending_inspection
+    expected_variable_definitions:
+      - pending_inspection
+    units:
+      wpi_index: pending_inspection
+    permitted_data_types:
+      wpi_index: pending_inspection
+    missing_value_rules:
+      wpi_index: "null or not available"
+    duplicate_date_policy: "one observation per date for each series"
+    validation_requirements:
+      - date continuity
+      - missing-value audit
+      - source reconciliation
+    source_information: "Pending inspection"
+    known_limitations: "Pending inspection"
+
+  - dataset_id: macro_controls
+    category: Additional macroeconomic controls
+    expected_frequency: pending_inspection
+    expected_date_field: pending_inspection
+    expected_variable_definitions:
+      - pending_inspection
+    units:
+      control_variable: pending_inspection
+    permitted_data_types:
+      control_variable: pending_inspection
+    missing_value_rules:
+      control_variable: "null or not available"
+    duplicate_date_policy: "one observation per date for each series"
+    validation_requirements:
+      - variable review
+      - date continuity
+      - source reconciliation
+    source_information: "Pending inspection"
+    known_limitations: "Pending inspection"

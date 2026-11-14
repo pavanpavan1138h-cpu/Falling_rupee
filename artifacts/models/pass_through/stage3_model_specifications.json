@@ -1,0 +1,1338 @@
+{
+  "approved_design": "asymmetric distributed-lag; January 2014-December 2024",
+  "bootstrap": {
+    "block_length": 6,
+    "replicates": 499,
+    "seed": 42
+  },
+  "conditional_nardl": [
+    {
+      "bounds_f_statistic": 4.151217738081686,
+      "bounds_lower_95": 3.841728922809435,
+      "bounds_pvalue_lower": 0.036,
+      "bounds_pvalue_upper": 0.1004,
+      "bounds_upper_95": 4.850032317925827,
+      "dependent_series": "cpi_annual_log_inflation",
+      "finite_sample_simulations": 10000,
+      "integration_classifications": "cpi_annual_log_inflation=I(1)-consistent; fx_positive_partial_sum=I(1)-consistent; fx_negative_partial_sum=I(1)-consistent",
+      "long_run_coefficients": "not reported unless the upper bound is exceeded",
+      "model": "ARDL converted to UECM; unrestricted intercept, no trend (PSS case 3)",
+      "observations": 132,
+      "p": 3,
+      "q": 1,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-01-01",
+      "simulation_seed": 42,
+      "status": "between bounds: inconclusive"
+    },
+    {
+      "bounds_f_statistic": 2.8874527180211054,
+      "bounds_lower_95": 3.841728922809435,
+      "bounds_pvalue_lower": 0.1357,
+      "bounds_pvalue_upper": 0.2904,
+      "bounds_upper_95": 4.850032317925827,
+      "dependent_series": "wpi_all_commodities_annual_log_inflation",
+      "finite_sample_simulations": 10000,
+      "integration_classifications": "wpi_all_commodities_annual_log_inflation=I(0)-consistent; fx_positive_partial_sum=I(1)-consistent; fx_negative_partial_sum=I(1)-consistent",
+      "long_run_coefficients": "not reported unless the upper bound is exceeded",
+      "model": "ARDL converted to UECM; unrestricted intercept, no trend (PSS case 3)",
+      "observations": 132,
+      "p": 3,
+      "q": 1,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-01-01",
+      "simulation_seed": 42,
+      "status": "below lower bound: no cointegration evidence"
+    }
+  ],
+  "hac_lags": 12,
+  "models": {
+    "asymmetric_aic_sensitivity__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.02817022373756181,
+        "const": 0.6966385836419753,
+        "depreciation_lag_0": -0.008712529368704008,
+        "outcome_lag_1": 1.1086550747860346,
+        "outcome_lag_2": -0.49875409956903677,
+        "outcome_lag_3": 0.24842456960433182
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.128774242313885,
+        "const": 0.20181170644545618,
+        "depreciation_lag_0": 0.05356757785254762,
+        "outcome_lag_1": 0.07916422085961722,
+        "outcome_lag_2": 0.1090168172328535,
+        "outcome_lag_3": 0.07660123018639384
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "asymmetric_aic_sensitivity__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.13392110242156835,
+        "const": 0.12006761140962278,
+        "depreciation_lag_0": 0.029771988530728197,
+        "outcome_lag_1": 1.702021785136688,
+        "outcome_lag_2": -0.9763539568465689,
+        "outcome_lag_3": 0.24061581745048838
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.09289196405756364,
+        "const": 0.10844370415812349,
+        "depreciation_lag_0": 0.08631813793514458,
+        "outcome_lag_1": 0.06153088725025224,
+        "outcome_lag_2": 0.0953000696404384,
+        "outcome_lag_3": 0.0669210999876924
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "asymmetric_aic_sensitivity__wpi_fuel_power_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.3443400124928991,
+        "const": 0.10947595814033552,
+        "depreciation_lag_0": 0.15014248549266018,
+        "outcome_lag_1": 1.5751998255470108,
+        "outcome_lag_2": -0.8056635034305103,
+        "outcome_lag_3": 0.18447260547781305
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.5869754662665696,
+        "const": 0.4557864790472363,
+        "depreciation_lag_0": 0.46027024246478004,
+        "outcome_lag_1": 0.05861851416437879,
+        "outcome_lag_2": 0.1010817770663396,
+        "outcome_lag_3": 0.07107260600579977
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "asymmetric_aic_sensitivity__wpi_manufactured_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.04052894887616034,
+        "const": 0.060381908000993856,
+        "depreciation_lag_0": 0.021423492949260194,
+        "outcome_lag_1": 1.656057719233254,
+        "outcome_lag_2": -0.7444368332360356,
+        "outcome_lag_3": 0.06150921305913811
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.05886826079113458,
+        "const": 0.05791032069016,
+        "depreciation_lag_0": 0.0377700661131782,
+        "outcome_lag_1": 0.07499557816101621,
+        "outcome_lag_2": 0.1590886671213711,
+        "outcome_lag_3": 0.10163425941849094
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "asymmetric_baseline__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.02817022373756181,
+        "const": 0.6966385836419753,
+        "depreciation_lag_0": -0.008712529368704008,
+        "outcome_lag_1": 1.1086550747860346,
+        "outcome_lag_2": -0.49875409956903677,
+        "outcome_lag_3": 0.24842456960433182
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.128774242313885,
+        "const": 0.20181170644545618,
+        "depreciation_lag_0": 0.05356757785254762,
+        "outcome_lag_1": 0.07916422085961722,
+        "outcome_lag_2": 0.1090168172328535,
+        "outcome_lag_3": 0.07660123018639384
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "asymmetric_baseline__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.13392110242156835,
+        "const": 0.12006761140962278,
+        "depreciation_lag_0": 0.029771988530728197,
+        "outcome_lag_1": 1.702021785136688,
+        "outcome_lag_2": -0.9763539568465689,
+        "outcome_lag_3": 0.24061581745048838
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.09289196405756364,
+        "const": 0.10844370415812349,
+        "depreciation_lag_0": 0.08631813793514458,
+        "outcome_lag_1": 0.06153088725025224,
+        "outcome_lag_2": 0.0953000696404384,
+        "outcome_lag_3": 0.0669210999876924
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "asymmetric_baseline__wpi_fuel_power_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.3443400124928991,
+        "const": 0.10947595814033552,
+        "depreciation_lag_0": 0.15014248549266018,
+        "outcome_lag_1": 1.5751998255470108,
+        "outcome_lag_2": -0.8056635034305103,
+        "outcome_lag_3": 0.18447260547781305
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.5869754662665696,
+        "const": 0.4557864790472363,
+        "depreciation_lag_0": 0.46027024246478004,
+        "outcome_lag_1": 0.05861851416437879,
+        "outcome_lag_2": 0.1010817770663396,
+        "outcome_lag_3": 0.07107260600579977
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "asymmetric_baseline__wpi_manufactured_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.04052894887616034,
+        "const": 0.060381908000993856,
+        "depreciation_lag_0": 0.021423492949260194,
+        "outcome_lag_1": 1.656057719233254,
+        "outcome_lag_2": -0.7444368332360356,
+        "outcome_lag_3": 0.06150921305913811
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.05886826079113458,
+        "const": 0.05791032069016,
+        "depreciation_lag_0": 0.0377700661131782,
+        "outcome_lag_1": 0.07499557816101621,
+        "outcome_lag_2": 0.1590886671213711,
+        "outcome_lag_3": 0.10163425941849094
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "asymmetric_brent_extension__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.024114716005848816,
+        "brent_lag_1": 0.0033030309663950675,
+        "const": 0.6848340307315393,
+        "depreciation_lag_0": -0.0012336555220995513,
+        "outcome_lag_1": 1.1146379389549215,
+        "outcome_lag_2": -0.5154881792790149,
+        "outcome_lag_3": 0.260643899479606
+      },
+      "control": "brent",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.13003939512486654,
+        "brent_lag_1": 0.0024979112701657698,
+        "const": 0.2035162724793762,
+        "depreciation_lag_0": 0.05791122885113449,
+        "outcome_lag_1": 0.07979343099739612,
+        "outcome_lag_2": 0.10907645894231788,
+        "outcome_lag_3": 0.07447988404455473
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "brent_lag_1"
+      ]
+    },
+    "asymmetric_brent_extension__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.08996647147477865,
+        "brent_lag_1": 0.023264499606111856,
+        "const": 0.10462583976044429,
+        "depreciation_lag_0": 0.07102748234518812,
+        "outcome_lag_1": 1.6038141589580477,
+        "outcome_lag_2": -0.86383900145644,
+        "outcome_lag_3": 0.22058638556081556
+      },
+      "control": "brent",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.09544255427509062,
+        "brent_lag_1": 0.005768051245698976,
+        "const": 0.09324913230296444,
+        "depreciation_lag_0": 0.06358326572167197,
+        "outcome_lag_1": 0.07020572764394574,
+        "outcome_lag_2": 0.09849457442956565,
+        "outcome_lag_3": 0.06404296585994117
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "brent_lag_1"
+      ]
+    },
+    "asymmetric_brent_interactions__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.04446043884934986,
+        "appreciation_x_brent": 0.0026292197929365154,
+        "brent_lag_1": 0.01210851069198388,
+        "const": 0.7998522475540124,
+        "depreciation_lag_0": -0.052469297968981254,
+        "depreciation_x_brent": -0.013127710178797393,
+        "outcome_lag_1": 1.130203226543254,
+        "outcome_lag_2": -0.5306515095240464,
+        "outcome_lag_3": 0.24110907930131784
+      },
+      "control": "brent_interactions",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.13511155513566217,
+        "appreciation_x_brent": 0.008554601775287064,
+        "brent_lag_1": 0.004843416697493052,
+        "const": 0.23041612294733818,
+        "depreciation_lag_0": 0.05857658523373068,
+        "depreciation_x_brent": 0.003894371496191393,
+        "outcome_lag_1": 0.08484896789358959,
+        "outcome_lag_2": 0.12085735722051374,
+        "outcome_lag_3": 0.08098166821425966
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "brent_lag_1",
+        "depreciation_x_brent",
+        "appreciation_x_brent"
+      ]
+    },
+    "asymmetric_brent_interactions__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.07199347109185321,
+        "appreciation_x_brent": 0.014507137037093339,
+        "brent_lag_1": 0.02856074947965866,
+        "const": 0.09697271686495108,
+        "depreciation_lag_0": 0.08163132768080786,
+        "depreciation_x_brent": -0.0014955555094783492,
+        "outcome_lag_1": 1.617157830105286,
+        "outcome_lag_2": -0.8889234622001575,
+        "outcome_lag_3": 0.23064946739732364
+      },
+      "control": "brent_interactions",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.10287629497690831,
+        "appreciation_x_brent": 0.012842974044840137,
+        "brent_lag_1": 0.010461473855823545,
+        "const": 0.09157567558684117,
+        "depreciation_lag_0": 0.06620656687494993,
+        "depreciation_x_brent": 0.004299948340146052,
+        "outcome_lag_1": 0.06772120160844954,
+        "outcome_lag_2": 0.09729418087962399,
+        "outcome_lag_3": 0.06471386834098258
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "brent_lag_1",
+        "depreciation_x_brent",
+        "appreciation_x_brent"
+      ]
+    },
+    "asymmetric_lag_only_sensitivity__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_1": 0.028587252830961266,
+        "const": 0.6698270009707217,
+        "depreciation_lag_1": 0.09186435742336063,
+        "outcome_lag_1": 1.111128498244004,
+        "outcome_lag_2": -0.493200912416965,
+        "outcome_lag_3": 0.23410604127093473
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_1": 0.10998188083409444,
+        "const": 0.21628624416984524,
+        "depreciation_lag_1": 0.08654610669521783,
+        "outcome_lag_1": 0.07668077176926781,
+        "outcome_lag_2": 0.11384420465787817,
+        "outcome_lag_3": 0.08743513522641384
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 1,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_1",
+        "appreciation_lag_1"
+      ]
+    },
+    "asymmetric_lag_only_sensitivity__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_1": 0.18045567089823267,
+        "const": 0.23968243629018518,
+        "depreciation_lag_1": -0.17655401353726813,
+        "outcome_lag_1": 1.6870745513893877,
+        "outcome_lag_2": -0.9567472878268379,
+        "outcome_lag_3": 0.24047000824610631
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_1": 0.15906531211600117,
+        "const": 0.13506004311928324,
+        "depreciation_lag_1": 0.0998723642901019,
+        "outcome_lag_1": 0.06215076833971729,
+        "outcome_lag_2": 0.09980057129641381,
+        "outcome_lag_3": 0.0731028276725951
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 1,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_1",
+        "appreciation_lag_1"
+      ]
+    },
+    "asymmetric_six_month_sensitivity__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.09275471187276334,
+        "appreciation_lag_1": -0.019884350060819365,
+        "appreciation_lag_2": 0.10817727912256268,
+        "appreciation_lag_3": 0.03712419659797342,
+        "appreciation_lag_4": -0.004650674910979688,
+        "appreciation_lag_5": -0.0008826132314428276,
+        "appreciation_lag_6": 0.1046657653629052,
+        "const": 0.8829166539745068,
+        "depreciation_lag_0": -0.08131521814300086,
+        "depreciation_lag_1": 0.13056878033053948,
+        "depreciation_lag_2": -0.11192559877995774,
+        "depreciation_lag_3": -0.0021303229026253603,
+        "depreciation_lag_4": 0.040337257884291836,
+        "depreciation_lag_5": 0.036293015913722124,
+        "depreciation_lag_6": 0.004258077888556144,
+        "outcome_lag_1": 0.8359504561344511
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.0691245063517547,
+        "appreciation_lag_1": 0.14998888233093258,
+        "appreciation_lag_2": 0.14927133289500202,
+        "appreciation_lag_3": 0.11306876150769157,
+        "appreciation_lag_4": 0.0847470615558071,
+        "appreciation_lag_5": 0.10268334865127177,
+        "appreciation_lag_6": 0.16392256990116688,
+        "const": 0.2753300175457632,
+        "depreciation_lag_0": 0.04727827587750844,
+        "depreciation_lag_1": 0.08158294382410876,
+        "depreciation_lag_2": 0.06288517340504986,
+        "depreciation_lag_3": 0.07903714625501,
+        "depreciation_lag_4": 0.08891725342617686,
+        "depreciation_lag_5": 0.05845088593584044,
+        "depreciation_lag_6": 0.09435857813906331,
+        "outcome_lag_1": 0.054605176198877
+      },
+      "observations": 126,
+      "p": 1,
+      "q": 6,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "depreciation_lag_1",
+        "appreciation_lag_1",
+        "depreciation_lag_2",
+        "appreciation_lag_2",
+        "depreciation_lag_3",
+        "appreciation_lag_3",
+        "depreciation_lag_4",
+        "appreciation_lag_4",
+        "depreciation_lag_5",
+        "appreciation_lag_5",
+        "depreciation_lag_6",
+        "appreciation_lag_6"
+      ]
+    },
+    "asymmetric_six_month_sensitivity__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": -0.10309304638745406,
+        "appreciation_lag_1": 0.2409765685986636,
+        "appreciation_lag_2": 0.08986352992377686,
+        "appreciation_lag_3": -0.018947098147665258,
+        "appreciation_lag_4": -0.12718944957596426,
+        "appreciation_lag_5": -0.21669760827566983,
+        "appreciation_lag_6": 0.02296859876815361,
+        "const": 0.2577402630972313,
+        "depreciation_lag_0": -0.04676955442463941,
+        "depreciation_lag_1": -0.1845730002510791,
+        "depreciation_lag_2": -0.2240780538224484,
+        "depreciation_lag_3": 0.036524868056313366,
+        "depreciation_lag_4": 0.08044063428596288,
+        "depreciation_lag_5": 0.028680467800155943,
+        "depreciation_lag_6": -0.12761897416213197,
+        "outcome_lag_1": 0.9773078981853089
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.19465606654921266,
+        "appreciation_lag_1": 0.2415514650181759,
+        "appreciation_lag_2": 0.18831158559091207,
+        "appreciation_lag_3": 0.14860668288207696,
+        "appreciation_lag_4": 0.11313962071276963,
+        "appreciation_lag_5": 0.1737464112676245,
+        "appreciation_lag_6": 0.19326478300171,
+        "const": 0.20355209212669303,
+        "depreciation_lag_0": 0.19423569318670292,
+        "depreciation_lag_1": 0.18578152550529328,
+        "depreciation_lag_2": 0.09847236061441393,
+        "depreciation_lag_3": 0.1372592277498149,
+        "depreciation_lag_4": 0.13091905426239167,
+        "depreciation_lag_5": 0.12742671128499197,
+        "depreciation_lag_6": 0.08672784629763873,
+        "outcome_lag_1": 0.02925956129303538
+      },
+      "observations": 126,
+      "p": 1,
+      "q": 6,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "depreciation_lag_1",
+        "appreciation_lag_1",
+        "depreciation_lag_2",
+        "appreciation_lag_2",
+        "depreciation_lag_3",
+        "appreciation_lag_3",
+        "depreciation_lag_4",
+        "appreciation_lag_4",
+        "depreciation_lag_5",
+        "appreciation_lag_5",
+        "depreciation_lag_6",
+        "appreciation_lag_6"
+      ]
+    },
+    "brent_inr_proxy_only__cpi_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.6667767943872697,
+        "outcome_lag_1": 1.1168148600283905,
+        "outcome_lag_2": -0.518321567664013,
+        "outcome_lag_3": 0.263181751111923,
+        "proxy_lag_1": 0.004067580357574261
+      },
+      "control": "proxy",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.2480683055484151,
+        "outcome_lag_1": 0.0818940698397516,
+        "outcome_lag_2": 0.10777810509922142,
+        "outcome_lag_3": 0.07615884088681638,
+        "proxy_lag_1": 0.002402331743763634
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "proxy_lag_1"
+      ]
+    },
+    "brent_inr_proxy_only__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.11065222937533331,
+        "outcome_lag_1": 1.5877054919805522,
+        "outcome_lag_2": -0.8364579870286923,
+        "outcome_lag_3": 0.20980576039700247,
+        "proxy_lag_1": 0.02345519721085584
+      },
+      "control": "proxy",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.07620531811454524,
+        "outcome_lag_1": 0.07084773351618101,
+        "outcome_lag_2": 0.0952019051018587,
+        "outcome_lag_3": 0.06194772647479637,
+        "proxy_lag_1": 0.00611746769200315
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "proxy_lag_1"
+      ]
+    },
+    "brent_inr_proxy_only__wpi_fuel_power_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.10067485396591092,
+        "outcome_lag_1": 1.3878579825439474,
+        "outcome_lag_2": -0.5371141627814067,
+        "outcome_lag_3": 0.09743341817268886,
+        "proxy_lag_1": 0.17059018483947969
+      },
+      "control": "proxy",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.2754188672967008,
+        "outcome_lag_1": 0.07644131901669425,
+        "outcome_lag_2": 0.11764543604569938,
+        "outcome_lag_3": 0.058470372048771695,
+        "proxy_lag_1": 0.021961803323130104
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "proxy_lag_1"
+      ]
+    },
+    "brent_inr_proxy_only__wpi_manufactured_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.07093709214724195,
+        "outcome_lag_1": 1.5863663220592001,
+        "outcome_lag_2": -0.6482335310469184,
+        "outcome_lag_3": 0.030651429958133906,
+        "proxy_lag_1": 0.010926348086328079
+      },
+      "control": "proxy",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.04329755560013406,
+        "outcome_lag_1": 0.08625598284165502,
+        "outcome_lag_2": 0.16341140512253963,
+        "outcome_lag_3": 0.09521073350423567,
+        "proxy_lag_1": 0.002893195118189477
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "proxy_lag_1"
+      ]
+    },
+    "cpi_simple_change_sensitivity__cpi_annual_simple_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.027713567685351645,
+        "const": 0.7176759161630275,
+        "depreciation_lag_0": -0.009781137322750974,
+        "outcome_lag_1": 1.1056705764666275,
+        "outcome_lag_2": -0.4967191147344449,
+        "outcome_lag_3": 0.2488454658379587
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.13503601375733582,
+        "const": 0.20880667102396297,
+        "depreciation_lag_0": 0.05492610281768317,
+        "outcome_lag_1": 0.078155424623307,
+        "outcome_lag_2": 0.10843710719762166,
+        "outcome_lag_3": 0.07652402404675415
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "extreme_fx_rows_omitted__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.029132053754543818,
+        "const": 0.6993517589723236,
+        "depreciation_lag_0": -0.010651138444992506,
+        "outcome_lag_1": 1.1088964682394067,
+        "outcome_lag_2": -0.4993365510495178,
+        "outcome_lag_3": 0.24843069818842484
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.13057602857660108,
+        "const": 0.2026298480203813,
+        "depreciation_lag_0": 0.06136940223576168,
+        "outcome_lag_1": 0.07945036357253452,
+        "outcome_lag_2": 0.11085805307439883,
+        "outcome_lag_3": 0.07651931105538842
+      },
+      "observations": 125,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "extreme_fx_rows_omitted__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.11168450938915923,
+        "const": 0.09815911349171856,
+        "depreciation_lag_0": 0.07990353016327532,
+        "outcome_lag_1": 1.6889036741225034,
+        "outcome_lag_2": -0.9535114690786956,
+        "outcome_lag_3": 0.22915033562834725
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.09577955842591385,
+        "const": 0.10512894996755066,
+        "depreciation_lag_0": 0.0675673582434609,
+        "outcome_lag_1": 0.06163945875352389,
+        "outcome_lag_2": 0.0915969657953749,
+        "outcome_lag_3": 0.0640136510184379
+      },
+      "observations": 125,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "published_cpi_sensitivity__cpi_published_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.028972147363112696,
+        "const": 0.7249067168727632,
+        "depreciation_lag_0": -0.020428681014313436,
+        "outcome_lag_1": 1.097937185087393,
+        "outcome_lag_2": -0.4870469836687926,
+        "outcome_lag_3": 0.24667482507385105
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.12956770634608236,
+        "const": 0.21075058578792535,
+        "depreciation_lag_0": 0.057014202092800496,
+        "outcome_lag_1": 0.08329266044896912,
+        "outcome_lag_2": 0.11756604635719342,
+        "outcome_lag_3": 0.0792610771975757
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    },
+    "subperiod_2020-onward__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": -0.07039026086533523,
+        "appreciation_lag_1": -0.3165411024895095,
+        "const": 1.940062077545898,
+        "depreciation_lag_0": -0.0037648601238146756,
+        "depreciation_lag_1": 0.2510871602936099,
+        "outcome_lag_1": 0.6123580866423047
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.19153832279147986,
+        "appreciation_lag_1": 0.1750010166038862,
+        "const": 0.3960833996392131,
+        "depreciation_lag_0": 0.05332597266513919,
+        "depreciation_lag_1": 0.09102667164125897,
+        "outcome_lag_1": 0.07813774405952867
+      },
+      "observations": 58,
+      "p": 1,
+      "q": 1,
+      "sample_end": "2024-12-01",
+      "sample_start": "2020-03-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "depreciation_lag_1",
+        "appreciation_lag_1"
+      ]
+    },
+    "subperiod_2020-onward__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": -0.5625411806528382,
+        "appreciation_lag_1": 0.376729546326654,
+        "const": 0.39053982022856093,
+        "depreciation_lag_0": -0.18576717866168035,
+        "depreciation_lag_1": -0.6630689556844055,
+        "outcome_lag_1": 1.0037584423885784
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.41466125157955375,
+        "appreciation_lag_1": 0.24152763341095138,
+        "const": 0.22375550755605927,
+        "depreciation_lag_0": 0.19243902318364628,
+        "depreciation_lag_1": 0.1261665829848618,
+        "outcome_lag_1": 0.01697839912504302
+      },
+      "observations": 58,
+      "p": 1,
+      "q": 1,
+      "sample_end": "2024-12-01",
+      "sample_start": "2020-03-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "depreciation_lag_1",
+        "appreciation_lag_1"
+      ]
+    },
+    "subperiod_pre-2020__cpi_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.06324286649639349,
+        "appreciation_lag_1": 0.05934414470101426,
+        "const": 0.6038895355140301,
+        "depreciation_lag_0": -0.012536013274372731,
+        "depreciation_lag_1": 0.060875580579177066,
+        "outcome_lag_1": 0.8607414220479465
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.12363237123006969,
+        "appreciation_lag_1": 0.15854072233889407,
+        "const": 0.20931701699819652,
+        "depreciation_lag_0": 0.08001882666865152,
+        "depreciation_lag_1": 0.10251126413782292,
+        "outcome_lag_1": 0.039627452036884864
+      },
+      "observations": 68,
+      "p": 1,
+      "q": 1,
+      "sample_end": "2020-02-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "depreciation_lag_1",
+        "appreciation_lag_1"
+      ]
+    },
+    "subperiod_pre-2020__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.0035697237192383047,
+        "appreciation_lag_1": 0.1655339730978753,
+        "const": -0.000915355690135386,
+        "depreciation_lag_0": 0.08847657924856847,
+        "depreciation_lag_1": 0.04152387486169157,
+        "outcome_lag_1": 0.9558716308517882
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.11323812329316406,
+        "appreciation_lag_1": 0.2856130511377632,
+        "const": 0.348723292567411,
+        "depreciation_lag_0": 0.08898734112738672,
+        "depreciation_lag_1": 0.15437700099025173,
+        "outcome_lag_1": 0.03296338784381385
+      },
+      "observations": 68,
+      "p": 1,
+      "q": 1,
+      "sample_end": "2020-02-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "depreciation_lag_0",
+        "appreciation_lag_0",
+        "depreciation_lag_1",
+        "appreciation_lag_1"
+      ]
+    },
+    "symmetric_baseline__cpi_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.6748894331116604,
+        "fx_lag_0": 0.004143354393295577,
+        "outcome_lag_1": 1.110800072248737,
+        "outcome_lag_2": -0.5005447718328895,
+        "outcome_lag_3": 0.24952938405351824
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.24076895287141267,
+        "fx_lag_0": 0.043430764318497926,
+        "outcome_lag_1": 0.0840213556197447,
+        "outcome_lag_2": 0.11151827392379408,
+        "outcome_lag_3": 0.07796222856645245
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "fx_lag_0"
+      ]
+    },
+    "symmetric_baseline__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.08123546338487131,
+        "fx_lag_0": 0.0669255424108223,
+        "outcome_lag_1": 1.7018295623422441,
+        "outcome_lag_2": -0.9795552896498327,
+        "outcome_lag_3": 0.24308641355450059
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.08874776129843517,
+        "fx_lag_0": 0.05641559187835029,
+        "outcome_lag_1": 0.06215989828016832,
+        "outcome_lag_2": 0.09708022114997276,
+        "outcome_lag_3": 0.06758678032777032
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "fx_lag_0"
+      ]
+    },
+    "symmetric_baseline__wpi_fuel_power_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.0333894362592164,
+        "fx_lag_0": 0.21942625530913745,
+        "outcome_lag_1": 1.5744566605804267,
+        "outcome_lag_2": -0.8068299835054794,
+        "outcome_lag_3": 0.18581692335910735
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.37353986012765433,
+        "fx_lag_0": 0.22929587377472418,
+        "outcome_lag_1": 0.05817504793380443,
+        "outcome_lag_2": 0.10279737163584458,
+        "outcome_lag_3": 0.07311617998998467
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "fx_lag_0"
+      ]
+    },
+    "symmetric_baseline__wpi_manufactured_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.05359291019741976,
+        "fx_lag_0": 0.028212047453318623,
+        "outcome_lag_1": 1.6555685636211341,
+        "outcome_lag_2": -0.7436110650244502,
+        "outcome_lag_3": 0.06084535232754195
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.047534236822644675,
+        "fx_lag_0": 0.02727396222813274,
+        "outcome_lag_1": 0.07416601797497528,
+        "outcome_lag_2": 0.15774533687531234,
+        "outcome_lag_3": 0.10053724540230073
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "fx_lag_0"
+      ]
+    },
+    "symmetric_matched__cpi_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.6748894331116604,
+        "fx_lag_0": 0.004143354393295577,
+        "outcome_lag_1": 1.110800072248737,
+        "outcome_lag_2": -0.5005447718328895,
+        "outcome_lag_3": 0.24952938405351824
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.24076895287141267,
+        "fx_lag_0": 0.043430764318497926,
+        "outcome_lag_1": 0.0840213556197447,
+        "outcome_lag_2": 0.11151827392379408,
+        "outcome_lag_3": 0.07796222856645245
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "fx_lag_0"
+      ]
+    },
+    "symmetric_matched__wpi_all_commodities_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.08123546338487131,
+        "fx_lag_0": 0.0669255424108223,
+        "outcome_lag_1": 1.7018295623422441,
+        "outcome_lag_2": -0.9795552896498327,
+        "outcome_lag_3": 0.24308641355450059
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.08874776129843517,
+        "fx_lag_0": 0.05641559187835029,
+        "outcome_lag_1": 0.06215989828016832,
+        "outcome_lag_2": 0.09708022114997276,
+        "outcome_lag_3": 0.06758678032777032
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "fx_lag_0"
+      ]
+    },
+    "symmetric_matched__wpi_fuel_power_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.0333894362592164,
+        "fx_lag_0": 0.21942625530913745,
+        "outcome_lag_1": 1.5744566605804267,
+        "outcome_lag_2": -0.8068299835054794,
+        "outcome_lag_3": 0.18581692335910735
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.37353986012765433,
+        "fx_lag_0": 0.22929587377472418,
+        "outcome_lag_1": 0.05817504793380443,
+        "outcome_lag_2": 0.10279737163584458,
+        "outcome_lag_3": 0.07311617998998467
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "fx_lag_0"
+      ]
+    },
+    "symmetric_matched__wpi_manufactured_annual_log_inflation": {
+      "coefficients": {
+        "const": 0.05359291019741976,
+        "fx_lag_0": 0.028212047453318623,
+        "outcome_lag_1": 1.6555685636211341,
+        "outcome_lag_2": -0.7436110650244502,
+        "outcome_lag_3": 0.06084535232754195
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "const": 0.047534236822644675,
+        "fx_lag_0": 0.02727396222813274,
+        "outcome_lag_1": 0.07416601797497528,
+        "outcome_lag_2": 0.15774533687531234,
+        "outcome_lag_3": 0.10053724540230073
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "fx_lag_0"
+      ]
+    },
+    "wpi_simple_change_sensitivity__wpi_all_commodities_annual_simple_inflation": {
+      "coefficients": {
+        "appreciation_lag_0": 0.13462017582215713,
+        "const": 0.12007178907254604,
+        "depreciation_lag_0": 0.03586118403262116,
+        "outcome_lag_1": 1.7087276636211108,
+        "outcome_lag_2": -0.9791559163453569,
+        "outcome_lag_3": 0.23738011542082635
+      },
+      "control": "none",
+      "hac_lags": 12,
+      "hac_standard_errors": {
+        "appreciation_lag_0": 0.10127601166412686,
+        "const": 0.10794603282434642,
+        "depreciation_lag_0": 0.08712431707507219,
+        "outcome_lag_1": 0.05905517384015087,
+        "outcome_lag_2": 0.09421635966312619,
+        "outcome_lag_3": 0.0672728477990327
+      },
+      "observations": 126,
+      "p": 3,
+      "q": 0,
+      "sample_end": "2024-12-01",
+      "sample_start": "2014-07-01",
+      "terms": [
+        "const",
+        "outcome_lag_1",
+        "outcome_lag_2",
+        "outcome_lag_3",
+        "depreciation_lag_0",
+        "appreciation_lag_0"
+      ]
+    }
+  },
+  "selection": {
+    "asymmetric": {
+      "p": 3,
+      "q": 0
+    },
+    "asymmetric_aic": {
+      "p": 3,
+      "q": 0
+    },
+    "asymmetric_slow_sensitivity": {
+      "p": 1,
+      "q": 6
+    },
+    "symmetric": {
+      "p": 3,
+      "q": 0
+    }
+  }
+}

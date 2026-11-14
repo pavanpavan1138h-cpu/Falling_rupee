@@ -1,0 +1,13 @@
+horizon_months,partition,n,elevated,non_elevated,target_start,target_end,training_label_cutoff
+1,initial_training,71,12,59,2015-02-01,2020-12-01,target month <= 2020-12
+1,expanding_validation,23,12,11,2021-02-01,2022-12-01,target month strictly before each validation origin
+1,validation_test_gap,6,2,4,2023-01-01,2023-06-01,not scored for model selection or final testing
+1,untouched_final_test,18,3,15,2023-07-01,2024-12-01,target month strictly before 2023-06
+3,initial_training,69,12,57,2015-04-01,2020-12-01,target month <= 2020-12
+3,expanding_validation,21,12,9,2021-04-01,2022-12-01,target month strictly before each validation origin
+3,validation_test_gap,6,2,4,2023-01-01,2023-06-01,not scored for model selection or final testing
+3,untouched_final_test,18,3,15,2023-07-01,2024-12-01,target month strictly before 2023-04
+6,initial_training,66,12,54,2015-07-01,2020-12-01,target month <= 2020-12
+6,expanding_validation,18,10,8,2021-07-01,2022-12-01,target month strictly before each validation origin
+6,validation_test_gap,6,2,4,2023-01-01,2023-06-01,not scored for model selection or final testing
+6,untouched_final_test,18,3,15,2023-07-01,2024-12-01,target month strictly before 2023-01
